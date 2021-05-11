@@ -9,6 +9,7 @@ What things you need to use this project
 https://api.github.com/
 API of Github
 ```
+
 ### Built With
 
 * [Android Studio] - Tool for android development
@@ -21,5 +22,7 @@ API of Github
 
 Download or clone this project for remote access.
 
+## App Preview
+https://im2.ezgif.com/tmp/ezgif-2-e69b98c2043e.gif
 
 
