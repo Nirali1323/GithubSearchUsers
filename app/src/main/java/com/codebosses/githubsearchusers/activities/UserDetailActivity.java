@@ -3,11 +3,14 @@ package com.codebosses.githubsearchusers.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
+import androidx.room.Query;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -36,7 +39,7 @@ public class UserDetailActivity extends AppCompatActivity {
     //    Instance fields....
     private UserDetailData userDetailData;
     private String userName;
-
+    private String followerName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +121,7 @@ public class UserDetailActivity extends AppCompatActivity {
         }
     }
 
+
     public class ClickHandler {
 
         public void onFollowerClick(View view) {
@@ -126,6 +130,15 @@ public class UserDetailActivity extends AppCompatActivity {
                 intent.putExtra(EndpointKeys.USER_NAME, userName);
                 startActivity(intent);
             }
+        }
+        public void onRepositoryClick(View view){
+            if (userName != null && !userName.isEmpty()) {
+                Intent intent = new Intent(UserDetailActivity.this, Repository.class);
+                intent.putExtra(EndpointKeys.USER_NAME, userName);
+                startActivity(intent);
+            }
+
+
         }
 
     }

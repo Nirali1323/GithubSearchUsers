@@ -34,10 +34,11 @@ public class FollowersActivity extends AppCompatActivity implements UserAdapter.
     //    Retrofit fields....
     private RetrofitInterface retrofitInterface;
     private Call<List<UserData>> userMainObjectCall;
+    private Call<List<UserData>> userRepository;
 
     //    Instance fields....
-    private List<UserData> userDataList = new ArrayList<>();
-
+    private List<UserData> userDataList = new ArrayList<>(5);
+    //private List<UserData> followerDataList = new ArrayList<>();
     //    Adapter fields....
     UserAdapter userAdapter;
 
@@ -48,6 +49,7 @@ public class FollowersActivity extends AppCompatActivity implements UserAdapter.
 
 //        Setting custom action bar....
         Toolbar toolbar = findViewById(R.id.toolbarUserFollowers);
+      //  toolbar.setOnClickListener((View.OnClickListener) this);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -61,14 +63,18 @@ public class FollowersActivity extends AppCompatActivity implements UserAdapter.
         followersBinding.recyclerViewUserFollowers.setAdapter(userAdapter);
 
 //        Getting followers....
+
         if (getIntent() != null) {
             Intent intent = getIntent();
             String userName = intent.getStringExtra(EndpointKeys.USER_NAME);
 
 //        Retrofit instance....
             retrofitInterface = RetrofitClient.getClient().create(RetrofitInterface.class);
-            getFollowers(userName);
+
+               getFollowers(userName);
+
         }
+
     }
 
     @Override
@@ -90,6 +96,7 @@ public class FollowersActivity extends AppCompatActivity implements UserAdapter.
     }
 
     private void getFollowers(String user) {
+
         followersBinding.progressBarUserFollowers.setVisibility(View.VISIBLE);
         userMainObjectCall = retrofitInterface.getFollowers(user);
         userMainObjectCall.enqueue(new Callback<List<UserData>>() {
@@ -120,6 +127,21 @@ public class FollowersActivity extends AppCompatActivity implements UserAdapter.
 
     @Override
     public void onUserClick(View view, int position) {
+
+          Intent intent = new Intent(FollowersActivity.this, UserDetailActivity.class);
+          intent.putExtra(EndpointKeys.USER_ID, userDataList.get(position).getId());
+          intent.putExtra(EndpointKeys.USER_NAME, userDataList.get(position).getLogin());
+          intent.putExtra(EndpointKeys.USER_AVATAR, userDataList.get(position).getAvatarUrl());
+          startActivity(intent);
+
+    }
+    @Override
+    public void onFollowerClick(View view, int position) {
+
+    }
+
+    @Override
+    public void onRepositoryClick(View view, int position) {
 
     }
 

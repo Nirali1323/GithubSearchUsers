@@ -163,4 +163,24 @@ public class SearchActivity extends AppCompatActivity implements UserAdapter.Use
         intent.putExtra(EndpointKeys.USER_AVATAR, userDataList.get(position).getAvatarUrl());
         startActivity(intent);
     }
+
+    @Override
+    public void onFollowerClick(View view, int position) {
+        Intent intent = new Intent(this, FollowersActivity.class);
+        intent.putExtra(EndpointKeys.Follower_ID, userDataList.get(position).getId());
+        intent.putExtra(EndpointKeys.Follower_NAME, userDataList.get(position).getLogin());
+        intent.putExtra(EndpointKeys.Follower_AVATAR, userDataList.get(position).getAvatarUrl());
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void onRepositoryClick(View view, int position) {
+        Intent intent = new Intent(this, Repository.class);
+        intent.putExtra(EndpointKeys.REPOSITORY_ID, userDataList.get(position).getId());
+        intent.putExtra(EndpointKeys.REPOSITORY_NAME, userDataList.get(position).getLogin());
+        intent.putExtra(EndpointKeys.REPOSITORY_AVATAR, userDataList.get(position).getAvatarUrl());
+        startActivity(intent);
+
+    }
 }

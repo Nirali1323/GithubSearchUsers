@@ -70,6 +70,14 @@ public class UserData {
     @SerializedName("score")
     @Expose
     private Double score;
+    @SerializedName("stargazers_count")
+    @Expose
+    private Long stargazersCount;
+    @SerializedName("watchers_count")
+    @Expose
+    private Long watchersCount;
+    private String stargazersUrl;
+
 
     public String getLogin() {
         return login;
@@ -221,6 +229,13 @@ public class UserData {
 
     public void setScore(Double score) {
         this.score = score;
+    }
+    public String getStargazersUrl() {
+        return stargazersUrl;
+    }
+
+    public void setStargazersUrl(String stargazersUrl) {
+        this.stargazersUrl = stargazersUrl;
     }
 
     @BindingAdapter({"android:profileImage"})

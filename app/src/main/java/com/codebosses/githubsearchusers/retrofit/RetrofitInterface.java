@@ -9,6 +9,7 @@ import java.util.List;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -22,5 +23,9 @@ public interface RetrofitInterface {
 
     @GET("users/{name}/followers")
     Call<List<UserData>> getFollowers(@Path("name") String name);
+
+    @GET("repos/{owner}/{repo}")
+    @Headers("Authorization: token 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")
+    Call<List<UserData>> getRepository(@Query("q") String query);
 
 }

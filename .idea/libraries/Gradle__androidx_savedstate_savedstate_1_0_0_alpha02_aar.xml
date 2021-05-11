@@ -3,9 +3,10 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/5b3f232bf6c2ae3706155dfc496215dc/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/5b3f232bf6c2ae3706155dfc496215dc/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/01b2972e3997c5e03a00e47e4e6a0623/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/01b2972e3997c5e03a00e47e4e6a0623/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/01b2972e3997c5e03a00e47e4e6a0623/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/990bab075abfb48cae7894d3109d63a9/jetified-savedstate-1.0.0-alpha02/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/990bab075abfb48cae7894d3109d63a9/jetified-savedstate-1.0.0-alpha02/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/990bab075abfb48cae7894d3109d63a9/jetified-savedstate-1.0.0-alpha02/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

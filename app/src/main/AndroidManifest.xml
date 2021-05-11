@@ -16,6 +16,11 @@
             android:configChanges="orientation"
             android:parentActivityName=".activities.UserDetailActivity" />
         <activity
+            android:name=".activities.Repository"
+            android:configChanges="orientation"
+            android:parentActivityName=".activities.UserDetailActivity" />
+
+        <activity
             android:name=".activities.UserDetailActivity"
             android:configChanges="orientation"
             android:parentActivityName=".activities.SearchActivity" />

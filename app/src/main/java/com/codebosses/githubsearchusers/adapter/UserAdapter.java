@@ -20,7 +20,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private List<UserData> userDataList = new ArrayList<>();
+    private List<UserData> userDataList = new ArrayList<>(5);
     private UserClickListener userClickListener;
 
     public UserAdapter(Context context, List<UserData> userDataList) {
@@ -62,7 +62,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
                 @Override
                 public void onClick(View v) {
                     if (userClickListener != null) {
-                        userClickListener.onUserClick(v, getAdapterPosition());
+
+                            userClickListener.onUserClick(v, getAdapterPosition());
+
                     }
                 }
             });
@@ -70,7 +72,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
     }
 
     public interface UserClickListener {
-        public void onUserClick(View view, int position);
+            public void onUserClick (View view,int position);
+
+        void onFollowerClick(View view, int position);
+
+        void onRepositoryClick(View view, int position);
     }
 
 }
